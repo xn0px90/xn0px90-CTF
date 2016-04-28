@@ -29,7 +29,7 @@ RUN apt-get install -y
 RUN mkdir -p /opt/code/
 
 # install packages required to compile vala and radare2
-RUN apt-get install -y software-properties-common python-all-dev wget
+RUN apt-get install -y software-properties-common python-all-dev wget curl httpie
 RUN apt-get install -y swig flex bison git gcc g++ make pkg-config glib-2.0
 RUN apt-get install -y git python-gobject-dev valgrind gdb libcapstone-dev libzip-dev libmagic-dev 
 
