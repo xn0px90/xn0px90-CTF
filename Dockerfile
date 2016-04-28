@@ -1,6 +1,8 @@
 # using phusion/baseimage as base image. 
-#FROM phusion/baseimage:0.9.9
-FROM ctarwater/kali
+FROM phusion/baseimage:0.9.9
+MAINTAINER xn0px90@gmail.com 
+RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
+    echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 
 # Set correct environment variables.
 ENV HOME /root
