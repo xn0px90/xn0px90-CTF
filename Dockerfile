@@ -6,7 +6,7 @@ FROM ctarwater/kali
 ENV HOME /root
 
 # Regenerate SSH host keys. baseimage-docker does not contain any
-RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
+# RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
