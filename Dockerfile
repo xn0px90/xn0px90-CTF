@@ -1,6 +1,10 @@
 # using phusion/baseimage as base image. 
-FROM phusion/baseimage:0.9.9
+#FROM phusion/baseimage:0.9.9
+FROM kalilinux/kali-linux-docker
 MAINTAINER xn0px90@gmail.com 
+#Kali APT source
+RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
+    echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 
 # Set correct environment variables.
 ENV HOME /root
@@ -11,13 +15,11 @@ ENV HOME /root
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
-#Kali APT source
-RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
-    echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
+
 
 # Install tools
 RUN apt-get update
-RUN apt-get upgrade --yes --force-yes 
+RUN apt-get upgrade -y
 RUN apt-get install -y  
 
 #VIM SPF13 awesome stuff
@@ -60,7 +62,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
 COPY go-wrapper /usr/local/bin/
-#debugging Go apps with dlv DWARF spec th eright way
+#debugging Go apps with dlv DWARF spec the right way
 RUN go get github.com/derekparker/delve/cmd/dlv 
 
 # Clean up APT when done.
