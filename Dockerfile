@@ -1,8 +1,6 @@
 # using phusion/baseimage as base image. 
 FROM phusion/baseimage:0.9.9
 MAINTAINER xn0px90@gmail.com 
-RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
-    echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 
 # Set correct environment variables.
 ENV HOME /root
@@ -12,6 +10,10 @@ ENV HOME /root
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
+
+#Kali APT source
+RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
+    echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 
 # Install tools
 RUN apt-get update
