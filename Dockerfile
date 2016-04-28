@@ -12,7 +12,7 @@ ENV HOME /root
 CMD ["/sbin/my_init"]
 
 # Install tools
-RUN apt-get update
+RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install -y tmux curl httpie
 
