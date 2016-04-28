@@ -1,6 +1,6 @@
 # using phusion/baseimage as base image. 
-FROM phusion/baseimage:0.9.9
-#FROM ctarwater/kali
+#FROM phusion/baseimage:0.9.9
+FROM ctarwater/kali
 
 # Set correct environment variables.
 ENV HOME /root
