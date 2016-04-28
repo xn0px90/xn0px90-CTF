@@ -14,7 +14,10 @@ CMD ["/sbin/my_init"]
 # Install tools
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y tmux 
+RUN apt-get install -y tmux curl httpie
+
+#VIM SPF13 awesome stuff
+RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
 # create code directory
 RUN mkdir -p /opt/code/
