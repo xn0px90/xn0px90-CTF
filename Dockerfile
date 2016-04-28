@@ -17,7 +17,7 @@ RUN apt-get upgrade -y
 RUN apt-get install -y 
 
 #VIM SPF13 awesome stuff
-RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+#RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
 # create code directory
 RUN mkdir -p /opt/code/
