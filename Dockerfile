@@ -17,8 +17,8 @@ RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /e
 
 # Install tools
 RUN apt-get update
-RUN apt-get --force-yes upgrade
-RUN apt-get -y install  
+RUN apt-get upgrade -y --force-yes
+RUN apt-get install -y  
 
 #VIM SPF13 awesome stuff
 #RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
