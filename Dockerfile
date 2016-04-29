@@ -30,7 +30,7 @@ RUN mkdir -p /opt/code/
 
 # install packages required to compile vala and radare2
 RUN apt-get install -y software-properties-common python-all-dev wget curl httpie
-RUN apt-get install -y swig flex bison git gcc g++ make pkg-config glib-2.0
+RUN apt-get install -y swig flex bison git gcc g++ make pkg-config glib-2.0 vim
 RUN apt-get install -y git python-gobject-dev valgrind gdb libcapstone-dev libzip-dev libmagic-dev 
 
 ENV VALA_TAR vala-0.26.1
@@ -39,7 +39,7 @@ ENV VALA_TAR vala-0.26.1
 RUN cd /opt/code && \
 	wget -c https://download.gnome.org/sources/vala/0.26/${VALA_TAR}.tar.xz && \
 	shasum ${VALA_TAR}.tar.xz | grep -q 0839891fa02ed2c96f0fa704ecff492ff9a9cd24 && \
-	tar -Jxf ${VALA_TAR}.tar.xz
+	tar -Jxf ${VALA_TAR}.tar.xm
 RUN cd /opt/code/${VALA_TAR}; ./configure --prefix=/usr ; make && make install
 # compile radare and bindings
 RUN cd /opt/code
