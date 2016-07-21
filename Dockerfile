@@ -33,12 +33,12 @@ RUN apt-get install -y software-properties-common python-all-dev wget curl httpi
 RUN apt-get install -y swig flex bison git gcc g++ make pkg-config glib-2.0 vim
 RUN apt-get install -y git python-gobject-dev valgrind gdb libcapstone-dev libzip-dev libmagic-dev 
 
-ENV VALA_TAR vala-0.26.1
+ENV VALA_TAR vala-0.32.1
 
 # compile vala
 RUN cd /opt/code && \
-	wget -c https://download.gnome.org/sources/vala/0.26/${VALA_TAR}.tar.xz && \
-	shasum ${VALA_TAR}.tar.xz | grep -q 0839891fa02ed2c96f0fa704ecff492ff9a9cd24 && \
+	wget -c https://download.gnome.org/sources/vala/0.32/${VALA_TAR}.tar.xz && \
+	shasum ${VALA_TAR}.tar.xz | grep -q dd0d47e548a34cfb1e4b04149acd082a86414c49057ffb79902eb9a508a161a9 && \
 	tar -Jxf ${VALA_TAR}.tar.xm
 RUN cd /opt/code/${VALA_TAR}; ./configure --prefix=/usr ; make && make install
 
