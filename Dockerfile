@@ -1,7 +1,7 @@
 # using phusion/baseimage as base image. 
 #FROM phusion/baseimage:0.9.9
 FROM kalilinux/kali-linux-docker
-MAINTAINER xn0px90@gmail.com 
+MAINTAINER xn0px90@akashicflow.com 
 #Kali APT source
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
     echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
@@ -23,7 +23,7 @@ RUN apt-get upgrade -y
 RUN apt-get install -y  
 
 #VIM SPF13 awesome stuff
-#RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
 # create code directory
 RUN mkdir -p /opt/code/
@@ -49,7 +49,7 @@ RUN cd radare2; sudo sh sys/all.sh
 
 #install Go
 
-ENV GOLANG_VERSION 1.7.1
+ENV GOLANG_VERSION 1.15.6
 ENV GOLANG_DOWNLOAD_URL https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz
 ENV GOLANG_DOWNLOAD_SHA256 e40c36ae71756198478624ed1bb4ce17597b3c19d243f3f0899bb5740d56212a
 
