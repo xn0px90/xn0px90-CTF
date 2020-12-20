@@ -1,6 +1,6 @@
 # using phusion/baseimage as base image. 
 #FROM phusion/baseimage:0.9.9
-FROM kalilinux/kali-linux-docker
+FROM kalilinux/kali-bleeding-edge
 MAINTAINER xn0px90@akashicflow.com 
 #Kali APT source
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
