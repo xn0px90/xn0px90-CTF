@@ -1,3 +1,4 @@
+#Just a script to install golang 
 #!/bin/bash
 set -e
 
